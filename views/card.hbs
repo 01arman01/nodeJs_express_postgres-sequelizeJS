@@ -1,0 +1,40 @@
+<h1>Карзина</h1>
+<div id="card">
+ {{#if courses.length}}
+
+ <table>
+    <thead> 
+         <tr>
+             <th>нозвание</th>
+             <th>Количества</th>
+             <th>Дествия</th>
+         </tr>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{card.count}}</td>
+            <td>
+                <form method="post" action="/card/remove/{{id}}" >
+                  {{!-- <input type="hidden" name="id" value="{{id}}"> --}}
+                  {{!-- <button class="btn btm-small js-remuve"     data-id="{{id}}" >Удалить</button> --}}
+                    <button class="btn btn-small  js-remove"type="submite">Удалить</button>
+                </form>
+                
+                
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+ </table>
+
+ <p><strong>Цена:</strong> <span class="price"> {{price}}</span><p/>
+  
+  <form action="/orders/add" method="post">
+  <button type="submit" class="btn">Сделать заказ</button>
+  </form>
+ {{else}}
+  <h1>Карзина Пуста</h1>
+ {{/if}}
+</div>

@@ -1,0 +1,21 @@
+<h1>zakazi</h1>
+<div >
+  
+    {{#if arr.length }}
+    {{#each arr}}
+     <div class="ramka">
+         <h1 style="font-size: 28px ;font-weight:bold" >Курс:/{{id}}</h1>
+       {{#if order.length}}  
+     {{#each order}} 
+       <span class="vernagir">{{title}}</span>
+      {{/each}}
+     {{/if}}
+     <p ><span style="font-size: 24px;">cena:</span><span class="price">{{price}}</span></p>
+      <p style="padding: 3px; border-bottom: 1px solid rgb(43, 9, 10);">{{date}}</p>
+     </div>   
+    
+        {{/each}}    
+     {{else}}
+    <p>курсов пока нет </p>
+    {{/if}} 
+</div>
